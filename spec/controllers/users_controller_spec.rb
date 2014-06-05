@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe PostController do
+describe UsersController do
 
 end
