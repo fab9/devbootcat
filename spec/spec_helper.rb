@@ -1,3 +1,7 @@
+# add the coveralls right up at the top, like they said.
+require 'coveralls'
+Coveralls.wear!('rails')
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
