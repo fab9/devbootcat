@@ -40,4 +40,9 @@ gem 'spring',        group: :development
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :development do
+  gem 'rspec-rails', '~> 2.0'
 end
