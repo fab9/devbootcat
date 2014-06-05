@@ -38,11 +38,12 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :test do
-  gem 'shoulda-matchers'
+group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 end
 
-group :development do
-  gem 'rspec-rails', '~> 2.0'
+group :test do
+  gem 'shoulda-matchers'
 end
+
+gem 'coveralls', require: false
