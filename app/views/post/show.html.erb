@@ -15,5 +15,7 @@ button_tag "New Comment"
 
 <%= @comments.each do |comment| %>
 	<!-- comment author? need association? -->
-	<p><%= comment[:text] %></p>
+	<div>
+		<p><%= comment[:text] %></p>
+	</div>
 <% end %>
