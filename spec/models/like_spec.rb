@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Like do
+describe Like, :type => :model do
   # pending "add some examples to (or delete) #{__FILE__}"
   context "migration" do
     it { should have_db_column(:user_id)}

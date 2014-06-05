@@ -1,6 +1,6 @@
-require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe Comment, :type => :model do
+describe Comment, :type => :model do
   context "migrations" do
     it { should have_db_column(:text) }
     it { should have_db_column(:author_id) }

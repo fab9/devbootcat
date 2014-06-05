@@ -1,7 +1,7 @@
-require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe Post, :type => :model do
-  context "migration" do 
+describe Post, :type => :model do
+  context "migration" do
      it { should have_db_column(:author_id) }
      it { should have_db_column(:title) }
      it { should have_db_column(:body) }
