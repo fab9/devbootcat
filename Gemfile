@@ -40,10 +40,16 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
 end
 
 gem 'coveralls', require: false
+
