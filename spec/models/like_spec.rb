@@ -10,9 +10,6 @@ describe Like, :type => :model do
 
   context "validations" do
     it { should validate_presence_of(:likable)}
-    it { should validate_presence_of(:likeable_type)}
-    it { should belong_to(:comment) }
-    it { should belong_to(:post) }
-         # it { should belong_to({:comment, :post}) }
+    it { should belong_to(:likable) }
   end
 end
