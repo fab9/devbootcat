@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: devbootcat_production
-  username: devbootcat
-  password: <%= ENV['DEVBOOTCAT_DATABASE_PASSWORD'] %>
