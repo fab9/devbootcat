@@ -6,8 +6,8 @@ FactoryGirl.define do |f|
   end
 
 
-  factory :invalid_post, parent: :post do |f| 
-    f.title nil 
-  end 
+  factory :invalid_post, parent: :post do |f|
+    f.title nil
+  end
 
 end
