@@ -64,13 +64,12 @@ describe PostsController do
       expect(response).to render_template("index")
     end
 
-    pending it "loads all of the posts into @posts" do
-      # post1 = FactoryGirl.create(:post, :title => "title1", :body => "body1")
-      # post2 = FactoryGirl.create(:post, :title => "title2", :body => "body2")
-      # get :index
-      # expect(assigns(:posts)).to match_array([post1, post2])
+    it "loads all of the posts into @posts" do
+      post1 = FactoryGirl.create(:post, :title => "title1", :body => "body1")
+      post2 = FactoryGirl.create(:post, :title => "title2", :body => "body2")
+      get :index
+      expect(assigns(:posts)).to match_array([post1, post2])
 
-      # can't do this ebcause there are a ton of posts that have been created? Can i use Post.all?
     end
 
   end
