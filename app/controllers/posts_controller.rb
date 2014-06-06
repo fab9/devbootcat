@@ -21,6 +21,23 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find_by_id(params[:id])
+  end
+
+  def update
+    @post = Post.find_by_id(params[:id]) 
+    if @post.update_attributes(post_params)
+      flash[:notice] = "Post updated!"
+      redirect_to post_path(@post)
+    else
+      flash[:notice] = "Wrong parameters"
+      render :edit
+    end
+  end
+
+
+
   def post_params
     params.require(:post).permit(:title, :body)
   end
