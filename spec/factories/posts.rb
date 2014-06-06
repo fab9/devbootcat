@@ -7,4 +7,5 @@ FactoryGirl.define do
 		f.body { Faker::Lorem.sentence(5)}
 	end
 
+
 end

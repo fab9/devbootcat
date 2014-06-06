@@ -5,4 +5,8 @@ class PostsController < ApplicationController
 		render :action => "show"
 	end
 
+  def index
+    @posts = Post.all
+  end
+
 end
