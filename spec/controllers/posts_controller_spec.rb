@@ -33,7 +33,7 @@ describe PostsController do
       it "redirects to the new post" do
         post :create, post: attributes_for(:post)
         expect(response).to redirect_to Post.last
-      end 
+      end
     end
 
     context "with invalid attributes" do
