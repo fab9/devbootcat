@@ -42,6 +42,13 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 end
 
+group :development  do
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem "growl"
+end
+
 group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
