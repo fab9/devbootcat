@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
 
+  def show
+    @post = Post.find_by_id(params[:id])
+  end
+
   def new
     @post = Post.new
   end
@@ -16,4 +20,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :body)
   end
+
 end

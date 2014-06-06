@@ -13,7 +13,7 @@
 
 button_tag "New Comment"
 
-<%= @comments.each do |comment| %>
+<%= @post.comments.each do |comment| %>
 	<!-- comment author? need association? -->
 	<div>
 		<p><%= comment[:text] %></p>

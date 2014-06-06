@@ -1,6 +1,20 @@
 require 'spec_helper'
 
 describe PostsController do
+  describe "GET #show" do
+      let(:post) { create(:post) }
+
+      it "assigns the requests post to @post" do
+        get :show, id: post
+        assigns(:post).should eq(post)
+      end
+
+      it "renders the :show view" do
+        get :show, id: post
+        expect(response).to render_template :show
+      end
+    end
+
   describe "GET #new" do
     it "renders the #new view" do
       get :new
@@ -31,7 +45,7 @@ describe PostsController do
 
       it "re-renders the new method" do
         post :create, post: attributes_for(:invalid_post)
-        expect(response).to render_template(:new)
+        expect(response).to render_template :new
       end
 
       it "renders a flash notice"

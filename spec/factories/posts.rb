@@ -5,7 +5,9 @@ FactoryGirl.define do |f|
     f.body { Faker::Lorem.sentence(5)}
   end
 
+
   factory :invalid_post, parent: :post do |f| 
     f.title nil 
   end 
+
 end
