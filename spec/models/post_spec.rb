@@ -1,3 +1,12 @@
+# Tests to include: 
+#   - Creating a new post -> "should create post"
+#   - Finding a post
+#   - Updating a post -> "should update post"
+#   - Destroying a post -> "should destroy post"
+#   - Testing that you can successfully find a post -> "should find post"
+#      http://my.safaribooksonline.com/book/programming/ruby/9781430260349/chapter-11-testing-your-application/sec2_9781430260349_ch11_xhtml
+#   - Test validations -> "should not create a post without title nor body"
+
 require 'spec_helper'
 
 describe Post, :type => :model do
