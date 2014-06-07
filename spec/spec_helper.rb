@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'capybara/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -21,6 +22,8 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
 
+  config.include Capybara::DSL
+
   config.include FactoryGirl::Syntax::Methods
 
   # factories_to_lint = FactoryGirl.factories.reject do |factory|
@@ -34,15 +37,23 @@ RSpec.configure do |config|
 
       # FactoryGirl.lint factories_to_lint
     ensure
-      DatabaseCleaner.clean
+      # DatabaseCleaner.clean
     end
   end
 
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
+  config.before(:each) do |example|
+    DatabaseCleaner.start
   end
+
+  config.after(:each) do |example|
+    DatabaseCleaner.clean
+  end
+
+  # config.around(:each) do |example|
+  #   DatabaseCleaner.cleaning do
+  #     example.run
+  #   end
+  # end
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
