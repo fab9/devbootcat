@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_id(params[:id])
+    @post = current_post
   end
 
   def new
@@ -22,11 +22,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by_id(params[:id])
+    @post = current_post
   end
 
   def update
-    @post = Post.find_by_id(params[:id]) 
+    @post = current_post
     if @post.update_attributes(post_params)
       flash[:notice] = "Post updated!"
       redirect_to post_path(@post)
@@ -36,7 +36,11 @@ class PostsController < ApplicationController
     end
   end
 
+  private
 
+  def current_post
+    @post = Post.find_by_id(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :body)
