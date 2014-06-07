@@ -1,0 +1,7 @@
+<h1>Home#index</h1>
+
+<!-- Show Sign Out link if user is signed in -->
+<% if user_signed_in? %>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<% end %>
+
