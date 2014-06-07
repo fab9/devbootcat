@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgresql as the database for Active Record
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,6 +38,22 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :development  do
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem "growl"
+end
+
 group :test do
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'faker'
+  gem 'launchy'
 end

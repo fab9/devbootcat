@@ -1,0 +1,21 @@
+
+<h3> <%= "#{@user[:username]}'s Posts" %> </h3>
+
+<%= @posts.each do |post| %>
+	<div>
+		<p><%= post[:title] %></p> 
+		<p><%= post[:body] %></p>
+	</div>
+<% end %>
+
+<h4> Comments </h4>
+<hr />
+
+button_tag "New Comment"
+
+<%= @post.comments.each do |comment| %>
+	<!-- comment author? need association? -->
+	<div>
+		<p><%= comment[:text] %></p>
+	</div>
+<% end %>

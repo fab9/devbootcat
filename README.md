@@ -3,3 +3,5 @@
 
 - [Trello board](https://trello.com/b/zlkG8OAa/devbootcat)
 - ![Schema (MVP)](http://cl.ly/image/2Z3h2I3G1s2A/Image%202014-06-04%20at%204.36.23%20PM.png "")
+
+Hello there!
