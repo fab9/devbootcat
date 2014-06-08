@@ -63,6 +63,7 @@ describe PostsController do
   describe "POST #create" do
     context "with user signed in" do
       login_user
+
       context "vith valid attributes" do
         it "creates a new post" do
           expect {
@@ -100,22 +101,36 @@ describe PostsController do
   end
 
   describe "GET #edit" do
-    let(:post) { create(:post) }
+      login_user
 
-    it "assigns the requests post to @post" do
-      get :show, id: post
-      assigns(:post).should eq(post)
+    context "current user is the author of the post" do
+     
+      it "renders the edit view" do
+        post = create(:post, author_id: subject.current_user.id)
+        get :edit, id: post 
+        expect(response).to render_template(:edit)
+      end
     end
 
-    it "renders the edit view" do
-      get :edit, id: post
-      expect(response).to render_template(:edit)
+    context "current user is not the author of the post" do
+      it "redirects to user dashboard" do
+        post = create(:post)
+        get :edit, id: post
+        expect(response).to redirect_to('/')
+      end
     end
   end
 
   describe "PUT #update" do
+    login_user
+
+    xit "redirects if user is not the author of the post" do
+      put :update, id: create(:post), post: attributes_for(:post)
+      expect(response).to redirect_to('/')
+    end
+
     before :each do 
-      @post = create(:post, title: "Lorem", body: "Ipsum") 
+      @post = create(:post, title: "Lorem", body: "Ipsum", author_id: subject.current_user.id) 
     end
 
     context "with valid attributes" do

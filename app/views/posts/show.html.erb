@@ -6,6 +6,10 @@
 	<p><%= markdown(@post.body) %></p>
 </div>
 
+<% if current_user.id == @post.id %>
+	<%= link_to "Edit Post", edit_post_path(@post) %>
+<% end %>
+
 
 <hr />
 <h4> Comments </h4>
