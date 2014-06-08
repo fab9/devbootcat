@@ -4,4 +4,9 @@
 - [Trello board](https://trello.com/b/zlkG8OAa/devbootcat)
 - ![Schema (MVP)](http://cl.ly/image/2Z3h2I3G1s2A/Image%202014-06-04%20at%204.36.23%20PM.png "")
 
-Hello there!
+#Questions/Things to look into
+- Is our join table named properly? `first_table + _ + second_table`
+  Both table names are plural, alphabetical order, default name can be configured
+
+
+
