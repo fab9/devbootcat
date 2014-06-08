@@ -39,10 +39,13 @@ describe "posts/show" do
 
   it "displays the text for each comment" do
     visit post_path(post)
+    fill_in 'text', with: "What an awesome post!"
+    click_button "Submit"
     expect(page).to have_content("What an awesome post!")
   end
 
   it "displays a new post button" do
+    pending
     visit post_path(post)
     expect(page).to have_content("New Comment")
   end
