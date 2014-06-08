@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'shoulda/matchers'
+require 'capybara/rspec'
 require 'database_cleaner'
 require 'capybara/rspec'
 
@@ -24,6 +25,9 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 
   config.include FactoryGirl::Syntax::Methods
+
+  config.include Devise::TestHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
 
   # factories_to_lint = FactoryGirl.factories.reject do |factory|
   #   factory.name =~ /^invalid/
