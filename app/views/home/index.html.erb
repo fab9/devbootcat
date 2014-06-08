@@ -1,5 +1,10 @@
-<h1>Home#index</h1>
-
+<h1>Dev Bootcat</h1>
+<%= link_to "New Post", new_post_path %><br>
+<ul>
+<% @posts.each do |post| %>
+  <li><%= link_to post.title, post %></li>
+<% end %>
+</ul> 
 <!-- Show Sign Out link if user is signed in -->
 <% if user_signed_in? %>
   <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
