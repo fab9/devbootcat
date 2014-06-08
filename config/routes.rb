@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
-
+  
   devise_for :users
   root to: 'home#index' # devise will break if you remove this line. By defining your root URL, Devise will use it for its redirection. For example, Devise will redirect the user to the root URL after they sign out from the application.
   
