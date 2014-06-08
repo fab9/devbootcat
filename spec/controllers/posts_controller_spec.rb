@@ -70,10 +70,10 @@ describe PostsController do
           }.to change(Post, :count).by(1)
         end
 
-        xit "increments the post count of the current user" do
+        it "increments the post count of the current user" do
           expect {
             post :create, post: attributes_for(:post)
-          }.to change(@current_user.posts, :count).by(1)
+          }.to change(subject.current_user.posts, :count).by(1)
         end
 
         it "redirects to the new post" do
