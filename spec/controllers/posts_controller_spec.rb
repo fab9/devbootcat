@@ -38,11 +38,22 @@ describe PostsController do
   end
 
   describe "GET #new" do
-    it "renders the #new view" do
-      get :new
-      expect(response).to render_template(:new)
+    context "with user signed in" do
+      login_user
+      it "renders the #new view" do
+        get :new
+        expect(response).to render_template(:new)
+      end
+    end
+
+    context "with user not signed in" do
+      it "redirects to the sign-in page" do
+        get :new
+        expect(response).to redirect_to(:new_user_session)
+      end
     end
   end
+
 
   describe "POST #create" do
     context "vith valid attributes" do
