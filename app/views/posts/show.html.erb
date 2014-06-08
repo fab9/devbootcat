@@ -7,16 +7,22 @@
 </div>
 
 
-<h4> Comments </h4>
 <hr />
+<h4> Comments </h4>
 
-<%= button_tag "New Comment" %>
+<div class="new-comment">
+	<%= form_tag('/comments') do %>
+		<%= text_area_tag(:text) %>
+		<%= hidden_field_tag 'post_id', @post[:id] %>
+		<%= submit_tag("Submit") %>
+	<% end %>
+</div>
 
 <% if @comments %>
 	<%= @post.comments.each do |comment| %>
 		<!-- comment.author? need association? -->
 		<div>
-			<p><%= markdown(comment[:text]) %></p>
+			<p><%= markdown(comment.text) %></p>
 		</div>
 	<% end %>
 <% end %>
