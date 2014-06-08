@@ -61,25 +61,34 @@ describe PostsController do
 
 
   describe "POST #create" do
-    context "vith valid attributes" do
-      it "creates a new post" do
-        expect {
+    context "with user signed in" do
+      login_user
+      context "vith valid attributes" do
+        it "creates a new post" do
+          expect {
+            post :create, post: attributes_for(:post)
+          }.to change(Post, :count).by(1)
+        end
+
+        xit "increments the post count of the current user" do
+          expect {
+            post :create, post: attributes_for(:post)
+          }.to change(@current_user.posts, :count).by(1)
+        end
+
+        it "redirects to the new post" do
           post :create, post: attributes_for(:post)
-        }.to change(Post, :count).by(1)
+          expect(response).to redirect_to Post.last
+        end
       end
 
-      it "redirects to the new post" do
-        post :create, post: attributes_for(:post)
-        expect(response).to redirect_to Post.last
-      end
+      context "with invalid attributes" do
+        it "does not create a new post" do
+          expect {
+            post :create, post: attributes_for(:invalid_post)
+          }.to change(Post, :count).by(0)
+        end
     end
-
-    context "with invalid attributes" do
-      it "does not create a new post" do
-        expect {
-          post :create, post: attributes_for(:invalid_post)
-        }.to change(Post, :count).by(0)
-      end
 
       it "re-renders the new method" do
         post :create, post: attributes_for(:invalid_post)
