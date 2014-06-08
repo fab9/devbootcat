@@ -32,18 +32,18 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
   Warden.test_mode!
 
-  # factories_to_lint = FactoryGirl.factories.reject do |factory|
-  #   factory.name =~ /^invalid/
-  # end
+  factories_to_lint = FactoryGirl.factories.reject do |factory|
+    factory.name =~ /^invalid_.*/
+  end
 
   config.before(:suite) do
     begin
       DatabaseCleaner.strategy = :transaction
       DatabaseCleaner.clean_with(:truncation)
 
-      # FactoryGirl.lint factories_to_lint
+      # FactoryGirl.lint #factories_to_lint
     ensure
-      # DatabaseCleaner.clean
+      DatabaseCleaner.clean
     end
   end
 
