@@ -1,9 +1,9 @@
 
 <div>
-	<p><%= @post[:title] %></p> 
+	<p><%= @post[:title] %></p>
 </div>
 <div>
-	<p><%= @post[:body] %></p>
+	<p><%= markdown(@post.body) %></p>
 </div>
 
 
@@ -18,15 +18,11 @@
 	<% end %>
 </div>
 
-
-
-<div class="comments"> <!-- I need this class for testing -->
-	<% if @post.comments %>
-		<% @post.comments.each do |comment| %>
-			<!-- comment.author? need association? -->
-			<div>
-				<p><%= comment[:text] %></p>
-			</div>
-		<% end %>
+<% if @comments %>
+	<%= @post.comments.each do |comment| %>
+		<!-- comment.author? need association? -->
+		<div>
+			<p><%= markdown(comment.text) %></p>
+		</div>
 	<% end %>
-</div>
+<% end %>

@@ -39,6 +39,7 @@ gem 'devise'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'redcarpet'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
