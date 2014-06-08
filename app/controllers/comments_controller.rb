@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
  		@comment.author = current_user
  		
  		if @comment.save
-    		flash[:success] = "Post created!"
+    		# flash[:success] = "Post created!"
     		redirect_to :back
     	end
 
