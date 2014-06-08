@@ -7,16 +7,26 @@
 </div>
 
 
-<h4> Comments </h4>
 <hr />
+<h4> Comments </h4>
 
-<%= button_tag "New Comment" %>
-
-<% if @comments %>
-	<%= @post.comments.each do |comment| %>
-		<!-- comment.author? need association? -->
-		<div>
-			<p><%= comment[:text] %></p>
-		</div>
+<div class="new-comment">
+	<%= form_tag('/comments') do %>
+		<%= text_area_tag(:text) %>
+		<%= hidden_field_tag 'post_id', @post[:id] %>
+		<%= submit_tag("Submit") %>
 	<% end %>
-<% end %>
+</div>
+
+
+
+<div class="comments"> <!-- I need this class for testing -->
+	<% if @post.comments %>
+		<% @post.comments.each do |comment| %>
+			<!-- comment.author? need association? -->
+			<div>
+				<p><%= comment[:text] %></p>
+			</div>
+		<% end %>
+	<% end %>
+</div>

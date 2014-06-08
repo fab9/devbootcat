@@ -22,33 +22,29 @@ end
 
 describe "posts/show" do
  
-  let!(:post) { create(:post,  title: "Title", body: "This is a Post Body") }
+  let!(:post) { create(:post,  title: "This is a Post Title", body: "This is a Post Body") }
+  let!(:comment) { create(:comment, author_id: post[:id], text: "What an awesome post!") }
+
 
   it "displays title of the post" do
     visit post_path(post)
-    expect(page).to have_content("Title")
+    expect(page).to have_content("This is a Post Title")
 
   end
 
-
-
-
-
-
-
-
-  # it "displays body of the post" do
-  #   assign(post)
-  #   render
-  #   expect(rendered).to include("This is a Post Body")
-  # end
+  it "displays body of the post" do
+    visit post_path(post)
+    expect(page).to have_content("This is a Post Body")
+  end
 
   it "displays the text for each comment" do
-    pending
+    visit post_path(post)
+    expect(page).to have_content("What an awesome post!")
   end
 
   it "displays a new post button" do
-    pending
+    visit post_path(post)
+    expect(page).to have_content("New Comment")
   end
 
   it "button appends a new comment form" do
