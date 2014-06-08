@@ -1,0 +1,11 @@
+<% if current_user.signed_in? %>
+  <div>
+    <ul>
+      <% @posts.each do |post| %>
+        <li>
+        <h2><%= link_to post.title, post_path(post) %></h2>
+        <p><%= post.body %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
