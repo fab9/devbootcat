@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create!(email: "admin@website.com", password_hash: "password")
+User.create!(email: "admin@website.com", password: "password")
 
 
 10.times do
