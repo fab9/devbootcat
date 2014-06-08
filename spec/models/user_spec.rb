@@ -9,5 +9,9 @@ describe User, :type => :model do
   context "migrations" do
     it { should have_db_column(:email) }
   end
+
+  context "associations" do
+    it { should have_many(:posts)}
+  end
 end
 
