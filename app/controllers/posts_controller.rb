@@ -48,6 +48,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body)
   end
 
+
   def require_login
     unless user_signed_in?
       redirect_to user_session_path
