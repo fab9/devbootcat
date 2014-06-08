@@ -67,4 +67,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # Flexible, catch-all route
+  match ':controller(/:action(/:id))', :via => :get
 end
+
