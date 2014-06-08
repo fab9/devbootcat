@@ -8,5 +8,10 @@
 - Is our join table named properly? `first_table + _ + second_table`
   Both table names are plural, alphabetical order, default name can be configured
 
+- Does our join table have a primary id? It shouldn't. Must suppress it
+  `create_table :somethings_things, :id => false`
+
+
+
 
 
