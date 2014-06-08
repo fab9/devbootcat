@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   devise_for :users
-  root to: 'home#index' # devise will break if you remove this line. By defining your root URL, Devise will use it for its redirection. For example, Devise will redirect the user to the root URL after they sign out from the application.
+  #root to: 'home#index' # devise will break if you remove this line. By defining your root URL, Devise will use it for its redirection. For example, Devise will redirect the user to the root URL after they sign out from the application.
   
   resources :posts #, only: [:index, :show]
   resources :comments
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
