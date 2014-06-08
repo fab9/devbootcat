@@ -1,9 +1,9 @@
 
 <div>
-	<p><%= @post[:title] %></p> 
+	<p><%= @post[:title] %></p>
 </div>
 <div>
-	<p><%= @post[:body] %></p>
+	<p><%= markdown(@post.body) %></p>
 </div>
 
 
@@ -16,7 +16,7 @@
 	<%= @post.comments.each do |comment| %>
 		<!-- comment.author? need association? -->
 		<div>
-			<p><%= comment[:text] %></p>
+			<p><%= markdown(comment[:text]) %></p>
 		</div>
 	<% end %>
 <% end %>
