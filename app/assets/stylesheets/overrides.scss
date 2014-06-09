@@ -1,0 +1,137 @@
+body.signed_out  {
+  bottom: 25px;
+  #content {
+    padding-top: 80px
+  }
+  h2 {
+    font-size: 200%;
+  }
+  #content .article {
+    background: rgba(214, 227, 255, 0.500);
+    padding: 15px;
+    border-radius: 2px;
+    a {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #3BAFDA;
+      margin-top: 20px;
+      background: #fff;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      font-weight: 300;
+    }
+    a:last-of-type {
+      margin-top: 10px;
+    }
+    a:hover {
+      color: #196ea3;
+    }
+  }
+  form {
+    display: block;
+    margin-bottom: 20px;
+  }
+  br {
+    display: none;
+  }
+  form > div {
+    text-align: right !important;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+  }
+
+  form label {
+    width: 100px !important;
+    margin-right: 20px;
+    font-weight: bold;
+  }
+
+  form input {
+    width: 250px;
+    float:right;
+  }
+}
+
+.home_heading {
+  -webkit-mask-image: url(http://ahhh.co/files/ex4.png);
+  color: #fff;
+  text-shadow: 2px 3px #fff, 6px 6px #333;
+  font-size: 600%;
+  margin: 0 auto;
+  width: 470px;
+  text-align: center;
+}
+
+.banner-wrapper {
+  width: 1000px;
+}
+
+header, nav {
+  margin: 0 auto;
+}
+
+#masonry-container {
+  width: 1000px;
+}
+
+
+.box {
+  // margin: 5px;
+  // padding: 5px;
+  background: #2f364c !important;
+  font-size: 14px !important;
+  line-height: 1.4em;
+  // float: left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  // display: inline;
+  width: 260px;
+  color: #fff;
+  // min-width: 200px;
+
+}
+
+
+.box img {
+  width: 100%;
+  max-width: 200px
+}
+
+#masonry-container a, #masonry-container a:visited {
+  color: #3BAFDA !important;
+  text-decoration: none;
+}
+
+#masonry-container h3 {
+  font-size: 180%;
+  margin-top: 10px;
+}
+
+.button-link {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      margin-top: 20px;
+      background: #3BAFDA;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      font-weight: 300;
+    }
+
+.button-link:hover {
+  color: #2f364c;
+}
+
+
+h1.post-title {
+  margin-bottom: .1em;
+}

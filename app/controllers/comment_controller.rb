@@ -1,3 +1,0 @@
-class CommentController < ApplicationController
-
-end

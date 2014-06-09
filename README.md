@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/fab9/travis-ci.svg?branch=master)](https://travis-ci.org/fab9/devbootcat)
-[![Coverage Status](https://coveralls.io/repos/fab9/devbootcat/badge.png)](https://coveralls.io/r/fab9/devbootcat)
+
+[![Build Status](https://travis-ci.org/fab9/devbootcat.svg?branch=development)](https://travis-ci.org/fab9/devbootcat)
+[![Coverage Status](https://coveralls.io/repos/fab9/devbootcat/badge.png?branch=model-tests-fab9)](https://coveralls.io/r/fab9/devbootcat?branch=model-tests-fab9)
+----
 
 ####Development Branch
 [![Build Status](https://travis-ci.org/fab9/devbootcat.svg?branch=development)](https://travis-ci.org/fab9/devbootcat)
