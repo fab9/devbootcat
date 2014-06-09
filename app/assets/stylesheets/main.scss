@@ -141,7 +141,8 @@ body {
       margin-bottom: 0.6667em;
     }
     h2 {
-      font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
+      font-family: "Playfair Display", Georgia, Times, "Times New Roman", serif;
+      font-style: italic;
     }
   }
   line-height: 1.5em;
@@ -2765,8 +2766,9 @@ body {
         }
       }
       h2 img {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
       }
     }
     nav {
