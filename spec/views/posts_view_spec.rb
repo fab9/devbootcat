@@ -19,30 +19,28 @@ require 'spec_helper'
 # end
 
 
-
 describe "posts/show" do
   before do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
+    @post = create(:post, title: "This is a Post Title", body: "This is a Post Body", author_id: user.id)
+    @comment = create(:comment, text: "What an awesome post!", post_id: @post.id, author_id: user.id )
   end
- 
-  let!(:post) { create(:post,  title: "This is a Post Title", body: "This is a Post Body") }
-  let!(:comment) { create(:comment, post_id: post[:id], text: "What an awesome post!") }
 
 
   it "displays title of the post" do
-    visit post_path(post)
+    visit post_path(@post)
     expect(page).to have_content("This is a Post Title")
 
   end
 
   it "displays body of the post" do
-    visit post_path(post)
+    visit post_path(@post)
     expect(page).to have_content("This is a Post Body")
   end
 
   it "displays the text for each comment" do
-    visit post_path(post)
+    visit post_path(@post)
     fill_in 'text', with: "What an awesome post!"
     click_button "Submit"
     expect(page).to have_content("What an awesome post!")
