@@ -26,8 +26,8 @@ feature "User editing a Post" do
 
   it "can update a post" do
     visit edit_post_path(@post)
-    fill_in 'Post Title', with: "New title"
-    fill_in 'Post Content', with: "Kate Upton's body"
+    fill_in 'Title', with: "New title"
+    fill_in 'Content', with: "Kate Upton's body"
     click_button('Update Post')
 
     expect(page).to have_content("New title")
