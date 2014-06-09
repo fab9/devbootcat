@@ -9,12 +9,29 @@
     <!-- Flash messages for devise: -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+<script>
+    $(document).ready(function() {
+    $("body.signed_out").aurora({
+        tags          : "kitty, cat, tech",
+        showCredits   : false,
+        complete      : null
+    });
+});
+</script>
 
 </head>
-<body>
-  <%= render partial: 'partials/banner' %>
-  <%= render partial: 'partials/nav' %>
+<body class= <% if user_signed_in? %> "signed_in" <% else %> "signed_out" <% end %> >
+
+  <% if user_signed_in? %>
+    <%= render partial: 'partials/banner' %>
+    <%= render partial: 'partials/nav' %>
+  <% end %>
   <div id="content">
+    <% unless user_signed_in? %>
+    <div class="text-wrapper">
+      <h1 class="home_heading">Dev BootCat</h1>
+    </div>
+    <% end %>
     <div class="article">
     <%= yield %>
     </div>
