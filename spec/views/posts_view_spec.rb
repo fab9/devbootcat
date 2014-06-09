@@ -1,22 +1,26 @@
 require 'spec_helper'
 
-# describe "posts/index" do
-#  post1 = FactoryGirl.create(:post, :title => "title1", :body => "body1")
-#  post2 = FactoryGirl.create(:post, :title => "title2", :body => "body2")
-#   it "displays title of post for all posts" do
-#     assign(:posts, [post1, post2])
-#     render
-#     expect(rendered).to include("title1")
-#     expect(rendered).to include("title2")
-#   end
+describe "posts/index" do
+  before do
+    user = FactoryGirl.create(:user, email: "test@test.com")
+    user2 = FactoryGirl.create(:user, email: "test2@test2.com")
+    login_as(user, :scope => :user)
+    create(:post, title: "title1", body: "body1", author_id: user.id)
+    create(:post, title: "title2", body: "body2", author_id: user2.id)
+  end
+  it "displays title of post for all posts" do
+    visit '/'
 
-#   it "displays body of the post for all posts" do
-#     assign(:posts, [post1, post2])
-#     render
-#     expect(rendered).to include("body1")
-#     expect(rendered).to include("body2")
-#   end
-# end
+    expect(page).to have_content("title1")
+    expect(page).to have_content("title2")
+  end
+
+  it "displays body of the post for all posts" do
+    visit '/'
+    expect(page).to have_content("body1")
+    expect(page).to have_content("body2")
+  end
+end
 
 
 describe "posts/show" do
