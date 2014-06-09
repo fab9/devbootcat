@@ -90,7 +90,7 @@ header, nav {
   -moz-border-radius: 5px;
   border-radius: 5px;
   // display: inline;
-  // width: 260px;
+  width: 260px;
   color: #fff;
   // min-width: 200px;
 
@@ -110,4 +110,28 @@ header, nav {
 #masonry-container h3 {
   font-size: 180%;
   margin-top: 10px;
+}
+
+.button-link {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      margin-top: 20px;
+      background: #3BAFDA;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      font-weight: 300;
+    }
+
+.button-link:hover {
+  color: #2f364c;
+}
+
+
+h1.post-title {
+  margin-bottom: .1em;
 }

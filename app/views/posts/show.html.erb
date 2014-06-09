@@ -1,13 +1,12 @@
 
-<div>
-	<p><%= @post[:title] %></p>
-</div>
-<div>
+	<h1 class="post-title"><%= @post.title %></h1>
+	<h5>By <%= @post.author.email %></h5>
 	<p><%= markdown(@post.body) %></p>
-</div>
+
 
 <% if current_user.id == @post.author_id %>
-	<%= link_to "Edit Post", edit_post_path(@post) %>
+	<%= link_to "Edit Post", edit_post_path(@post), class: 'button-link' %>
+	<%= link_to "Delete Post", post_path(@post), class: 'button-link', method: :delete  %>
 <% end %>
 
 
@@ -24,9 +23,10 @@
 
 <% if @post.comments %>
 	<% @post.comments.each do |comment| %>
-		<!-- comment.author? need association? -->
+
 		<div>
 			<p><%= markdown(comment.text) %></p>
+			<h5>Posted by: <%= comment.author.email %></h5>
 		</div>
 	<% end %>
 <% end %>

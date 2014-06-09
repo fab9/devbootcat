@@ -113,9 +113,9 @@ jQuery(document).ready ->
   $container.imagesLoaded ->
     $container.masonry
       itemSelector: ".box"
-      gutterWidth: 10
-      # columnWidth: (containerWidth) ->
-      #   containerWidth / 3
+      gutterWidth: 20
+      columnWidth: (containerWidth) ->
+        containerWidth / 5
       isAnimated: true
       isFitWidth: true
       animationOptions:
