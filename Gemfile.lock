@@ -95,6 +95,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.1)
+      rails
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.6.0)
@@ -210,6 +212,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  masonry-rails
   pg
   rails (= 4.1.1)
   rb-fsevent

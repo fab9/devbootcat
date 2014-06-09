@@ -40,6 +40,7 @@ gem 'devise'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'redcarpet'
+gem 'masonry-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
