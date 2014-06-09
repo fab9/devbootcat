@@ -1,0 +1,38 @@
+<nav role="navigation">
+
+    <form action="http://google.com/search" method="get">
+        <fieldset role="search">
+            <input type="hidden" name="q" value="site:carolinartz.me">
+            <input class="search" type="text" name="q" results="0" placeholder="Search">
+        </fieldset>
+        <fieldset class="mobile-nav">
+            <select>
+                <option value="">Navigate…</option>
+                <option value="http://yoniweisbrod.com/">» Blog</option>
+                <option value="http://yoniweisbrod.com/blog/archives">» Archives</option>
+                <option value="http://yoniweisbrod.com/projects">» Projects</option>
+                <option value="http://yoniweisbrod.com/published">» Published</option>
+                <option value="http://yoniweisbrod.com/hire-me">» Hire Me</option>
+                <option value="http://yoniweisbrod.com/atom.xml">» RSS</option>
+            </select>
+        </fieldset>
+    </form>
+
+    <ul class="main-navigation">
+        <li><a href="/">Blog</a>
+        </li>
+        <li><a href="/blog/archives">Archives</a>
+        </li>
+        <li><a href="/projects">Projects</a>
+        </li>
+        <% if user_signed_in? %>
+
+        <li><%= link_to "My Posts", posts_path(@user) %></li>
+        <li><%= link_to "New Post", new_post_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <% end %>
+
+
+    </ul>
+
+</nav>

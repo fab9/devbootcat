@@ -18,8 +18,8 @@
 	<% end %>
 </div>
 
-<% if @comments %>
-	<%= @post.comments.each do |comment| %>
+<% if @post.comments %>
+	<% @post.comments.each do |comment| %>
 		<!-- comment.author? need association? -->
 		<div>
 			<p><%= markdown(comment.text) %></p>

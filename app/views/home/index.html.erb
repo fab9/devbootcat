@@ -1,14 +1,14 @@
 <h1>Dev Bootcat</h1>
 <%= link_to "New Post", new_post_path %><br>
-<ul>
+<div id="monsonry-container" class="transitions-enabled centered fluid infinite-scroll clearfix">
 <% @posts.each do |post| %>
-  <li>
+  <div class='box'>
   <h3><%= link_to post.title, post %></h3>
-  <p><%= truncate(markdown(post.body), length: 100, escape: false) %>
-  </li>
+  <p><%= truncate(markdown(post.body), length: 100, escape: false) %></p>
+  </div>
 
 <% end %>
-</ul>
+</div>
 <!-- Show Sign Out link if user is signed in -->
 <% if user_signed_in? %>
   <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
