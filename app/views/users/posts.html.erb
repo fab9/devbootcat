@@ -1,0 +1,12 @@
+
+<h2>My Posts</h2>
+<hr>
+<div id="monsonry-container" class="transitions-enabled centered fluid infinite-scroll clearfix">
+<% @user_posts.each do |post| %>
+  <div class='box'>
+  <h3><%= link_to post.title, post %></h3>
+  <p><%= truncate(markdown(post.body), length: 100, escape: false) %></p>
+  </div>
+
+<% end %>
+</div>
