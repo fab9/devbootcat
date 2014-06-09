@@ -1,7 +1,7 @@
 <%= form_for @post do |f| %>
-  <%= f.label :title, "Title: " %><br />
+  <h3 class="post_label"><%= f.label :title, "Post Title: " %></h3>
   <%= f.text_field :title %><br />
-  <%= f.label :body, "Body: " %><br />
-  <%= f.text_area :body %><br />
-  <%= f.submit %>
+  <h3><%= f.label :body, "Post Content: " %></h3>
+  <%= f.text_area :body, class: "post_content" %><br />
+  <%= f.submit class: "button"  %>
 <% end %>

@@ -6,14 +6,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-    <!-- Flash messages for devise: -->        
+    <!-- Flash messages for devise: -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render partial: 'partials/banner' %>
+  <%= render partial: 'partials/nav' %>
+  <div id="content">
+    <div class="article">
+    <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
