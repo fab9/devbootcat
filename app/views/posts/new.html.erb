@@ -1,9 +1,3 @@
 <h1>New Post</h1>
 
-<%= form_for @post do |f| %>
-  <h3 class="post_label"><%= f.label :title, "Post Title: " %></h3>
-  <%= f.text_field :title %><br />
-  <h3><%= f.label :body, "Post Content: " %></h3>
-  <%= f.text_area :body, class: "post_content" %><br />
-  <%= f.submit class: "button"  %>
-<% end %>
+<%= render 'form' %>
