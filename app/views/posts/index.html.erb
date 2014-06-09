@@ -5,7 +5,7 @@
   <ul>
     <% @posts.each do |post| %>
       <li>
-      <h2><%= link_to post.title, post_path(post) %></h2>
+      <h1><%= link_to markdown(post.title), post_path(post) %></h1>
       <p><%= markdown(post.body) %></p>
 
       </li>

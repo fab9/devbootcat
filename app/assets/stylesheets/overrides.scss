@@ -111,3 +111,27 @@ header, nav {
   font-size: 180%;
   margin-top: 10px;
 }
+
+.button-link {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      padding: 2px 4px;
+      border-radius: 2px;
+      color: #fff;
+      margin-top: 20px;
+      background: #3BAFDA;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      font-weight: 300;
+    }
+
+.button-link:hover {
+  color: #2f364c;
+}
+
+
+h1.post-title {
+  margin-bottom: .1em;
+}
