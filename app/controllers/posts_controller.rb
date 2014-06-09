@@ -36,7 +36,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     else
       flash[:notice] = "Wrong parameters"
-      redirect_to 'edit'
+      render 'edit'
     end
   end
 

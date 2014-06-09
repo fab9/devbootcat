@@ -9,11 +9,10 @@ feature "User editing a Post" do
 
   it "can access the post editing form from the post's show page" do
     visit post_path(@post)
-    visit post_path(@post)
 
     expect(page).to have_content(@post.title)
     expect(page).to have_content(@post.body)
-    expect(page).to have_content('Edit Post')
+    expect(page).to have_link('Edit Post')
   end
 
   it "sees the post editing form and its content" do

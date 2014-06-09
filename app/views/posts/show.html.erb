@@ -6,7 +6,7 @@
 	<p><%= markdown(@post.body) %></p>
 </div>
 
-<% if current_user.id == @post.id %>
+<% if current_user.id == @post.author_id %>
 	<%= link_to "Edit Post", edit_post_path(@post) %>
 <% end %>
 
