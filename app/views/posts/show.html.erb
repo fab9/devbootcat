@@ -6,6 +6,7 @@
 
 <% if current_user.id == @post.author_id %>
 	<%= link_to "Edit Post", edit_post_path(@post), class: 'button-link' %>
+	<%= link_to "Delete Post", post_path(@post), class: 'button-link', method: :delete  %>
 <% end %>
 
 
