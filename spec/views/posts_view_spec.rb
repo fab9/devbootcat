@@ -23,7 +23,7 @@ end
 describe "posts/show" do
  
   let!(:post) { create(:post,  title: "This is a Post Title", body: "This is a Post Body") }
-  let!(:comment) { create(:comment, author_id: post[:id], text: "What an awesome post!") }
+  let!(:comment) { create(:comment, post_id: post[:id], text: "What an awesome post!") }
 
 
   it "displays title of the post" do
@@ -45,17 +45,17 @@ describe "posts/show" do
   end
 
   it "displays a new post button" do
-    pending
+    pending("Future Ajax")
     visit post_path(post)
     expect(page).to have_content("New Comment")
   end
 
   it "button appends a new comment form" do
-    pending
+    pending("Future Ajax")
   end
 
   it "appends a new comment upon submit" do
-    pending
+    pending("Future Ajax")
   end
 
 end
