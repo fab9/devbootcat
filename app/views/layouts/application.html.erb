@@ -12,7 +12,9 @@
 
 </head>
 <body>
-  <%= render partial: 'partials/banner' %>
+   <% if user_signed_in? %>
+    <%= render partial: 'partials/banner' %>
+  <% end %>
   <%= render partial: 'partials/nav' %>
   <div id="content">
     <div class="article">

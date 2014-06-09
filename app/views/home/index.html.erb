@@ -1,5 +1,4 @@
-<h1>Dev Bootcat</h1>
-<%= link_to "New Post", new_post_path %><br>
+
 <div id="monsonry-container" class="transitions-enabled centered fluid infinite-scroll clearfix">
 <% @posts.each do |post| %>
   <div class='box'>
@@ -9,8 +8,5 @@
 
 <% end %>
 </div>
-<!-- Show Sign Out link if user is signed in -->
-<% if user_signed_in? %>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-<% end %>
+
 
