@@ -1,7 +1,7 @@
 
 <h2>My Posts</h2>
 <hr>
-<div id="monsonry-container" class="transitions-enabled centered fluid infinite-scroll clearfix">
+<div id="masonry-container" class="transitions-enabled infinite-scroll centered fluid masonry">
 <% @user_posts.each do |post| %>
   <div class='box'>
   <h3><%= link_to post.title, post %></h3>

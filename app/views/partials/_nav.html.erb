@@ -8,10 +8,6 @@
         <fieldset class="mobile-nav">
             <select>
                 <option value="">Navigate…</option>
-<!--                 <option value="http://yoniweisbrod.com/">» Blog</option>
-                <option value="http://yoniweisbrod.com/blog/archives">» Archives</option>
-                <option value="http://yoniweisbrod.com/projects">» Projects</option>
-                <option value="http://yoniweisbrod.com/published">» Published</option> -->
                 <option value="">» New Post</option>
                 <option value="">» Sign Out</option>
             </select>
@@ -19,14 +15,7 @@
     </form>
 
     <ul class="main-navigation">
-<!--         <li><a href="/">Blog</a>
-        </li>
-        <li><a href="/blog/archives">Archives</a>
-        </li>
-        <li><a href="/projects">Projects</a>
-        </li> -->
         <% if user_signed_in? %>
-
         <li><%= link_to "My Posts", posts_user_path(current_user.id) %></li>
         <li><%= link_to "New Post", new_post_path, class: "new_post" %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>

@@ -87,10 +87,10 @@ html {
 }
 
 body > div {
-  background: #f2f2f2 url('/images/noise.png?1396003740') top left;
+  // background: #f2f2f2 url('/images/noise.png?1396003740') top left;
   border-bottom: 1px solid #bfbfbf;
   > div {
-    background: #f8f8f8 url('/images/noise.png?1396003740') top left;
+    // background: #f8f8f8 url('/images/noise.png?1396003740') top left;
     border-right: 1px solid #e0e0e0;
   }
 }
@@ -251,7 +251,7 @@ p, article blockquote, ul, ol {
 }
 
 
-button, .button {
+button, .button, .signed_out form div:last-child input {
   // margin: 0 auto;
   font-size: 1.2rem;
   padding: .6rem 1rem;
@@ -267,7 +267,7 @@ button, .button {
   transition: all 0.3s ease-in-out;
 }
 
-.button:hover, button:hover {
+.button:hover, button:hover, .signed_out form div:last-child input:hover {
   background-color: #ffffff;
   color: #009ac9;
   border-color: #009ac9;
@@ -468,6 +468,7 @@ body {
   #content > {
     article {
       *zoom: 1;
+      background:transparent;
     }
     div > {
       article, section {
@@ -498,7 +499,10 @@ body {
       clear: both;
     }
   }
-  #content > {
+  #content {
+    background: transparent;
+  }
+  > {
     article:after, div > section:after {
       content: "";
       display: table;
@@ -520,7 +524,8 @@ body {
 
 body {
   -webkit-text-size-adjust: none;
-  max-width: 960px;
+  // max-width: 960px;
+  width: 100%;
   position: relative;
   margin: 0 auto;
   > {
@@ -531,8 +536,10 @@ body {
   }
   #content > {
     article {
-      margin-left: 18px;
-      margin-right: 18px;
+      margin: 0 auto;
+      width: 1000px;
+      // margin-left: 18px;
+      // margin-right: 18px;
     }
     div > {
       article, section {
@@ -550,6 +557,11 @@ body {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
   }
+}
+
+body.signed_out .content > article{
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 480px) {
@@ -976,6 +988,20 @@ form {
   }
 }
 
+@media only screen {
+  body.signed_out #content {
+    div, article {
+      text-align: justify;
+      padding-top: 17.5px;
+      padding-bottom: 17.5px;
+      width: 480px;
+      margin: 0 auto;
+      // float: left;
+    }
+  }
+}
+
+
 @media only screen and (min-width: 768px) {
   body {
     -webkit-text-size-adjust: auto;
@@ -989,7 +1015,7 @@ form {
   }
   #content {
     overflow: visible;
-    margin-right: 240px;
+    // margin-right: 240px;
     position: relative;
   }
   .no-sidebar #content {
@@ -1004,7 +1030,10 @@ form {
       text-align: justify;
       padding-top: 17.5px;
       padding-bottom: 17.5px;
-      float: left;
+      width: 1000px;
+      margin: 0 auto;
+      float: none;
+      // float: left;
     }
   }
   aside.sidebar {
@@ -1060,7 +1089,7 @@ form {
     font-size: 1.3em;
   }
   #content {
-    margin-right: 300px;
+    // margin-right: 300px;
     > {
       div, article {
         padding-top: 27.5px;
@@ -2755,10 +2784,10 @@ body {
       }
     }
     div {
-      background: #fff;
+      // background: #fff;
       border-bottom: 0px;
       > div {
-        background: #fff;
+        // background: #fff;
         border-right-width: 0px;
       }
     }
