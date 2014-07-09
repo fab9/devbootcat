@@ -55,12 +55,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 a {
-  color: #1863a1;
+  color: #0181eb;
   &:visited {
-    color: #751590;
+    color: #0181eb;
   }
   &:focus, &:hover {
-    color: #0181eb;
+    color: #00acff;
   }
   &:active {
     color: #01579f;
@@ -184,6 +184,15 @@ h3 {
   font-size: 1.3em;
   color: #aaa;
   font-weight: bold;
+  margin-bottom: .2em;
+    a {
+      color: #0181eb;
+      font-size: 1.5em;
+      line-height: 1.3em;
+      padding: .2em .2em 0 .2em;
+      text-decoration: none;
+
+    }
 }
 
 

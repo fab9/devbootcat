@@ -29,11 +29,11 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = current_post
+    # @post = current_post
     # verify_authorship
-    if @post.update_attributes(post_params)
+    if current_post.update_attributes(post_params)
       flash[:notice] = "Post updated!"
-      redirect_to post_path(@post)
+      redirect_to post_path(current_post)
     else
       flash[:notice] = "Wrong parameters"
       render 'edit'
