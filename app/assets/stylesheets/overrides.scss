@@ -86,11 +86,11 @@ header, nav {
   font-size: 14px !important;
   line-height: 1.4em;
   // float: left;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 5px;
   // display: inline;
-  width: 260px;
+  // width: 260px;
   color: #fff;
   // min-width: 200px;
 
@@ -151,5 +151,70 @@ body.signed_out #content div {
 }
 
 body.signed_out #content .article {
+  text-align: left;
+}
+
+.box {
+  max-height: auto;
+}
+
+// #post-container {
+//   overflow: hidden;
+//     display: -webkit-box;
+//     display: -moz-box;
+//     display: -ms-flexbox;
+//     display: -webkit-flex;
+//     display: flex;
+//     -webkit-flex-direction: column;
+// }
+
+.box {
+    //   -webkit-box-ordinal-group: 1;
+    // -moz-box-ordinal-group: 1;
+    // -webkit-order: 0;
+    // -ms-flex-order: 0;
+    // order: 0;
+    // -webkit-box-flex: 0;
+    // -moz-box-flex: 0;
+    // -webkit-flex: 0 1 auto;
+    // -ms-flex: 0 1 auto;
+    // flex: 0 1 auto;
+    // -webkit-align-self: stretch;
+    // -ms-flex-item-align: stretch;
+    // align-self: stretch;
+}
+
+.box img {
+  display: inline-block;
+  width: 200px;
+  float: left;
+  position:relative;
+  margin-right: 10px;
+}
+
+div.inner {
+max-width: 90%;
+margin: 0 auto;
+overflow: hidden;
+text-overflow: ellipsis;
+max-height: 95%;
+margin-bottom: 10px;
+orphans: inherit;
+overflow-wrap: break-word;
+}
+
+h3 {
+font-size: 1.3em;
+// color: #aaa;
+font-weight: bold;
+margin-bottom: 1em;
+vertical-align: bottom;
+height: auto;
+position: relative;
+top: 10px;
+text-align:left;
+}
+
+p {
   text-align: left;
 }

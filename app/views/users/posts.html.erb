@@ -1,12 +1,35 @@
 
 <h2>My Posts</h2>
 <hr>
-<div id="masonry-container" class="transitions-enabled infinite-scroll centered fluid masonry">
+<div id="post-container">
 <% @user_posts.each do |post| %>
-  <div class='box'>
-  <h3><%= link_to post.title, post %></h3>
-  <p><%= truncate(markdown(post.body), length: 100, escape: false) %></p>
+
+  <div class="box <%= "size#{col_span}#{col_span}" %>">
+  <div class="inner">
+    <h3><%= link_to post.title, post, class: "post-title" %></h3>
+    <!-- <div><%#= truncate(markdown(post.body), length: 200, escape: false) %></div> -->
+        <div><%= markdown(post.body) %></div>
+
+   </div>
   </div>
 
 <% end %>
 </div>
+
+<script>
+$("#post-container").nested({
+  minWidth: 240,
+  gutter: 10,
+  animate: true,
+  animationOptions: {
+    speed: 100,
+    duration: 200,
+    queue: true
+  },
+  resizeToFit: true,
+  resizeToFitOptions: {
+    resizeAny: true
+  }
+});
+</script>
+
