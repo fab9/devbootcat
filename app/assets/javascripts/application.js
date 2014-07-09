@@ -12,11 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.nested
 // require turbolinks
 // require masonry/jquery.imagesloaded.min
 //= require_tree .
 //= require imagesloaded
-//= require jquery.nested
 // require masonry/jquery.masonry
 // require masonry/jquery.event-drag
 // require masonry/jquery.infinitescroll.min
