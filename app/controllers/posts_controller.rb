@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = current_post
+    @post = get_post
   end
 
   def new
@@ -16,26 +16,30 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
+
     if @post.save
+      set_flash :success, object: @post
       redirect_to post_path(@post)
     else
+      set_flash :error, object: @post
       render :new
     end
   end
 
   def edit
-    @post = current_post
+    @post = get_post
     verify_authorship
   end
 
   def update
-    # @post = current_post
-    # verify_authorship
-    if current_post.update_attributes(post_params)
+    @post = get_post
+    if @post.update_attributes(post_params)
       flash[:notice] = "Post updated!"
-      redirect_to post_path(current_post)
+      # set_flash :success, object: @post
+      redirect_to post_path(@post)
     else
-      flash[:notice] = "Wrong parameters"
+      set_flash :error, object: @post
+      # flash[:notice] = "Wrong parameters"
       render 'edit'
     end
   end
@@ -50,7 +54,7 @@ class PostsController < ApplicationController
 
   private
 
-  def current_post
+  def get_post
     @post = Post.find_by_id(params[:id])
   end
 
