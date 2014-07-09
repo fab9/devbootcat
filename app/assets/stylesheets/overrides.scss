@@ -261,7 +261,7 @@ p {
       &:before {}
    }
 }
-
+<div class=​"grid_4">​
 .signed_out form div:last-child {
    input[type="password"],
    input[type="email"],
@@ -280,6 +280,10 @@ input[type="submit"], button {
 
 .field_with_errors {
    display: inline;
+}
+
+.alert ul {
+   margin-bottom: 0;
 }
 
 .alert li {
