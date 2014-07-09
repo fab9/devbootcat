@@ -22,3 +22,7 @@
 // require masonry/jquery.infinitescroll.min
 // require masonry/modernizr-transitions
 
+
+ $(document).on('click', '.close', function () {
+    $(this).parent('div').fadeOut();
+});
