@@ -13,7 +13,7 @@
 <script>
     $(document).ready(function() {
     $("body.signed_out").aurora({
-        tags          : "kitty, cat, tech",
+        tags          : "kitty, cat, computer",
         showCredits   : false,
         complete      : null
     });
@@ -30,6 +30,9 @@
   <div id="content">
     <% unless user_signed_in? %>
     <div class="text-wrapper">
+    <div class="img-wrapper">
+      <img src="http://goo.gl/ylxIWu" title="dev bootcat" />
+    </div>
       <h1 class="home_heading">Dev BootCat</h1>
     </div>
     <% end %>

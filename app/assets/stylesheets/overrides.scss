@@ -135,3 +135,21 @@ header, nav {
 h1.post-title {
   margin-bottom: .1em;
 }
+
+.img-wrapper {
+  width: 470px;
+}
+
+.img-wrapper img {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+body.signed_out #content div {
+  text-align: center;
+}
+
+body.signed_out #content .article {
+  text-align: left;
+}
