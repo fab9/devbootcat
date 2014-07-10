@@ -163,6 +163,7 @@ body.signed_out #content .article {
    max-height: auto;
    overflow: hidden;
    border-bottom: 10px solid white;
+   margin-top: 10px;
 }
 
 .box img {
@@ -312,6 +313,11 @@ body.signed_out {
       text-align: center;
       font-size: 300%;
    }
+}
+
+body > header {
+   margin-left: 0;
+   margin-right: 0;
 }
 
 .signed_out .article h2::after {
