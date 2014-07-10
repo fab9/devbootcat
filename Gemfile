@@ -7,6 +7,7 @@ gem 'rails', '4.1.1'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+gem 'compass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -60,7 +61,8 @@ group :development  do
   gem 'guard'
   gem 'guard-rspec'
   gem 'rb-fsevent'
-  gem "growl"
+  gem 'growl'
+  gem 'pry-rails'
 end
 
 group :test do

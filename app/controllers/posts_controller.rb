@@ -17,8 +17,10 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
+      flash[:success] = "Post created!"
       redirect_to post_path(@post)
     else
+      flash[:error] = "Something went wrong..."
       render :new
     end
   end
@@ -32,10 +34,10 @@ class PostsController < ApplicationController
     # @post = current_post
     # verify_authorship
     if current_post.update_attributes(post_params)
-      flash[:notice] = "Post updated!"
+      flash[:success] = "Post updated!"
       redirect_to post_path(current_post)
     else
-      flash[:notice] = "Wrong parameters"
+      flash[:error] = "Something went wrong..."
       render 'edit'
     end
   end
@@ -43,6 +45,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:success] = "Post deleted!"
     redirect_to '/'
 
   end
