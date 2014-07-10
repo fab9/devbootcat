@@ -61,7 +61,8 @@ group :development  do
   gem 'guard'
   gem 'guard-rspec'
   gem 'rb-fsevent'
-  gem "growl"
+  gem 'growl'
+  gem 'pry-rails'
 end
 
 group :test do

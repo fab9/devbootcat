@@ -13,9 +13,11 @@
  * require_tree .
  *= require_self
  *= require 'main'
- * require 'overrides'
- *= require 'custom'
+
+ *= require 'overrides'
+  *= require 'custom'
+
  */
 
-@import "compass";
-@import "compass/css3";
+/*@import "compass";
+@import "compass/css3";*/

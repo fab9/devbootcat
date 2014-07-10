@@ -12,7 +12,7 @@ body.signed_out {
       font-size: 200%;
    }
    #content .article {
-      background: rgba(214, 227, 255, 0.5);
+      background: rgba(214, 227, 255, 0.8);
       padding: 15px;
       border-radius: 2px;
       a {
@@ -53,9 +53,14 @@ body.signed_out {
       margin-right: 20px;
       font-weight: bold;
    }
-   form input {
-      width: 250px;
-      float: right;
+   form {
+      input {
+         width: 250px;
+         float: right;
+      }
+      input[type="submit"] {
+         width: 175px;
+      }
    }
 }
 
@@ -63,7 +68,7 @@ body.signed_out {
    -webkit-mask-image: url(http://ahhh.co/files/ex4.png);
    color: #fff;
    text-shadow: 2px 3px #fff, 6px 6px #333;
-   font-size: 600%;
+   font-size: 400%;
    margin: 0 auto;
    width: 470px;
    text-align: center;
@@ -77,14 +82,14 @@ header, nav {
    margin: 0 auto;
 }
 
-#masonry-container {
-   width: 1000px;
-}
+// #masonry-container {
+//    width: 1000px;
+// }
 
 .box {
    // margin: 5px;
    // padding: 5px;
-   background: #2f364c !important;
+   // background: #2f364c !important;
    font-size: 14px !important;
    line-height: 1.4em;
    // float: left;
@@ -93,7 +98,8 @@ header, nav {
    border-radius: 5px;
    // display: inline;
    // width: 260px;
-   color: #fff;
+   // color: #fff;
+   color: #888888;
    // min-width: 200px;
 }
 
@@ -102,15 +108,15 @@ header, nav {
    max-width: 200px;
 }
 
-#masonry-container a, #masonry-container a:visited {
-   color: #3BAFDA !important;
-   text-decoration: none;
-}
+// #masonry-container a, #masonry-container a:visited {
+//    color: #3BAFDA !important;
+//    text-decoration: none;
+// }
 
-#masonry-container h3 {
-   font-size: 180%;
-   margin-top: 10px;
-}
+// #masonry-container h3 {
+//    font-size: 180%;
+//    margin-top: 10px;
+// }
 
 .button-link {
    display: inline-block;
@@ -155,6 +161,8 @@ body.signed_out #content .article {
 
 .box {
    max-height: auto;
+   overflow: hidden;
+   border-bottom: 10px solid white;
 }
 
 .box img {
@@ -163,6 +171,8 @@ body.signed_out #content .article {
    float: left;
    position: relative;
    margin-right: 10px;
+   margin-bottom: 10px;
+   margin-top: 20px;
 }
 
 div.inner {
@@ -178,7 +188,6 @@ div.inner {
 
 h3 {
    font-size: 1.3em;
-   // color: #aaa;
    font-weight: bold;
    margin-bottom: 1em;
    vertical-align: bottom;
@@ -261,7 +270,7 @@ p {
       &:before {}
    }
 }
-<div class=​"grid_4">​
+
 .signed_out form div:last-child {
    input[type="password"],
    input[type="email"],
@@ -289,4 +298,22 @@ input[type="submit"], button {
 .alert li {
    text-align: left !important;
    list-style-type: none;
+}
+
+body.signed_out #content form div {
+   margin-right: 0;
+}
+
+body.signed_out {
+   h2, label {
+      color: #28324E;
+   }
+   h2 {
+      text-align: center;
+      font-size: 300%;
+   }
+}
+
+.signed_out .article h2::after {
+   content: url(https://doc-0k-80-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/ih6pjmj0aqkk382168p243beetqfmpsj/1404957600000/08440785255651986528/*/0B9sJDpz93uClZGtsa2JjVkZNZXc?h=16653014193614665626);
 }
