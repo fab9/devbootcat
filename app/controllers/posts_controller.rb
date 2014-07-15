@@ -8,6 +8,9 @@ class PostsController < ApplicationController
 
   def show
     @post = current_post
+    @comment = Comment.new
+    @comment.post_id = @post.id
+
   end
 
   def new
@@ -15,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.new(post_params)
+    @post = current_user.authored_posts.new(post_params)
     if @post.save
       flash[:success] = "Post created!"
       redirect_to post_path(@post)
@@ -28,6 +31,7 @@ class PostsController < ApplicationController
   def edit
     @post = current_post
     verify_authorship
+    # flash[:] = "Post created!"
   end
 
   def update
@@ -43,7 +47,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = current_post
     @post.destroy
     flash[:success] = "Post deleted!"
     redirect_to '/'

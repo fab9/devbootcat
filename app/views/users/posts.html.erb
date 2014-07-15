@@ -2,7 +2,7 @@
 <h2>My Posts</h2>
 
 <div id="post-container">
-  <% @user_posts.each do |post| %>
+  <% @user.authored_posts.each do |post| %>
 
 
   <div class="box <%= "size#{col_span}#{col_span}" %> post">

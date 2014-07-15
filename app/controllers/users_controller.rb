@@ -1,14 +1,18 @@
-class UsersController < ApplicationController
-  def show
+class UsersController < ApplicationController/
+  # def show
 
-  end
+  # end
 
-  def posts
+  # def comments
+  #   # @user_comments = current_user.comments
+  # end
 
-    @user = User.find(params[:id])
+  # def posts
 
-    # @user_posts = Post.where("current_user = ALL(author_id)")
-    @user_posts = @user.posts
-  end
+  #   # @user = User.find(params[:id])
+
+  #   # @user_posts = Post.where("current_user = ALL(author_id)")
+  #   # @user_posts = @user.posts
+  # end
 
 end

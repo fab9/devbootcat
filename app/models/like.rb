@@ -1,4 +1,4 @@
 class Like < ActiveRecord::Base
   belongs_to :likable, :polymorphic => true
-  validates :likable, :presence => true
+  # validates :likable, :presence => true
 end
